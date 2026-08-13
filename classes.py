@@ -32,9 +32,9 @@ class Record:
         self.phones = [p for p in self.phones if p.value != phone]
 
     def edit_phone(self, old_phone, new_phone):
-        for p in self.phones:
+        for i, p in enumerate(self.phones):
             if p.value == old_phone:
-                p.value = Phone(new_phone)
+                self.phones[i] = Phone(new_phone)
 
     def find_phone(self, phone):
         for p in self.phones:
